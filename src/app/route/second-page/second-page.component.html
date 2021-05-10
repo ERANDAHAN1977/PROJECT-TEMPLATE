@@ -1,0 +1,8 @@
+<div style="border-style: groove;padding: 20px;">
+	<div *ngIf="isWaitForData"> WAIT FOR DATA ...</div>
+
+	<div>
+		<li *ngFor="let balance of simBalances" style="list-style:none">
+			<pre>{{  balance | json }}</pre>
+		</li>
+	</div>
