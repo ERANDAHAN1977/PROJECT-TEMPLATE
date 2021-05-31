@@ -9,6 +9,8 @@ import { SimBalanceReq, SimBalance } from 'src/app/model/balance';
 } )
 export class FirstPageComponent implements OnInit {
 
+	isWaitForData: boolean = true;
+
 	simBalances: SimBalance[] = [];
 
 	constructor( private balanceService: DataService ) {
@@ -20,11 +22,10 @@ export class FirstPageComponent implements OnInit {
 		req.id = 'AAAA';
 
 		this.balanceService.getUserSimAndFlyBalances( req ).subscribe( ( data: SimBalance[] ) => {
-			//debugger;
 			this.simBalances = data;
+			this.isWaitForData = false;
+
 		} );
 	}
-
-
 
 }

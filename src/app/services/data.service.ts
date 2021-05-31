@@ -8,7 +8,7 @@ import { SimBalanceReq, SimBalance } from '../model/balance';
 @Injectable( { providedIn: 'root' } )
 export class DataService extends BaseService {
 
-	private balances: SimBalance[] = [];
+	private balances: SimBalance[] | undefined;
 
 	constructor( protected http: HttpClient ) {
 		super( http );
@@ -16,13 +16,16 @@ export class DataService extends BaseService {
 
 	public getUserSimAndFlyBalances( req: SimBalanceReq ): Observable<SimBalance[]> {
 
+		//debugger;
+		let reply: Observable<SimBalance[]>;
+
 		if ( this.balances )
 		{
-			return of( this.balances );
+			reply = of( this.balances );
 		}
 		else
 		{
-			return this.http.get<SimBalance[]>( 'assets/data.json' ).pipe
+			reply = this.http.get<SimBalance[]>( 'assets/data.json' ).pipe
 				(
 					tap( ( data: SimBalance[] ) => {
 						this.balances = data;
@@ -33,6 +36,7 @@ export class DataService extends BaseService {
 					} ),
 				);
 		}
+		return reply;
 	}
 
 }
