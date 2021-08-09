@@ -1,0 +1,116 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-debugger": "off",
+    "indent": [
+      "error",
+      4
+    ],
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1
+      }
+    ],
+    "no-mixed-spaces-and-tabs": "off",
+    "curly": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "eqeqeq": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": "off",
+    "@typescript-eslint/semi": [
+      "error"
+    ],
+    "brace-style": [
+      "error",
+      "allman"
+    ],
+    "no-trailing-spaces": [
+      "error",
+      {
+        "skipBlankLines": false,
+        "ignoreComments": true
+      }
+    ],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": true,
+        "afterColon": true
+      }
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "block-spacing": [
+      "error",
+      "always"
+    ],
+    "space-before-blocks": "error",
+    "space-infix-ops": "error",
+    "no-whitespace-before-property": "error",
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ],
+    "switch-colon-spacing": [
+      "error",
+      {
+        "after": true,
+        "before": true
+      }
+    ],
+    "array-bracket-spacing": [
+      "error",
+      "always"
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "no-multi-spaces": [
+      "error"
+    ],
+    "no-case-declarations": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "off"
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": [
+      "off"
+    ],
+    "@typescript-eslint/no-empty-function": [
+      "off"
+    ]
+  }
+}

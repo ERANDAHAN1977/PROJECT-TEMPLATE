@@ -1,8 +1,9 @@
 
-
-export class SimBalanceReq {
-	constructor() { }
-	public id: string = '';
+export class SimBalanceReq
+{
+    constructor ()
+    { }
+	public id = '';
 }
 
 export interface SimBalance {

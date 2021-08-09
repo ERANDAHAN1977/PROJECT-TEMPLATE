@@ -1,8 +1,9 @@
 <div *ngIf="isWaitForData"> WAIT FOR DATA ...</div>
 
+<input [(ngModel)]="userName">
 <div>
-	<div style="border-style: groove;padding: 20px;">
-		<li *ngFor="let balance of simBalances" style="list-style:none">
-			<pre>{{  balance | json }}</pre>
-		</li>
-	</div>
+  <div style="border-style: groove;padding: 20px;">
+    <li *ngFor="let balance of simBalances" style="list-style:none">
+      <pre>{{  balance | json }}</pre>
+    </li>
+  </div>

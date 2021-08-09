@@ -5,38 +5,43 @@ import { Observable, of } from 'rxjs';
 import { tap, delay, catchError } from 'rxjs/operators';
 import { SimBalanceReq, SimBalance } from '../model/balance';
 
-@Injectable( { providedIn: 'root' } )
-export class DataService extends BaseService {
+@Injectable( { providedIn : 'root' } )
+export class DataService extends BaseService
+{
 
 	private balances: SimBalance[] | undefined;
 
-	constructor( protected http: HttpClient ) {
-		super( http );
+	constructor ( protected http: HttpClient )
+	{
+	    super( http );
 	}
 
-	public getUserSimAndFlyBalances( req: SimBalanceReq ): Observable<SimBalance[]> {
+	public getUserSimAndFlyBalances ( req: SimBalanceReq ): Observable<SimBalance[]>
+	{
 
-		//debugger;
-		let reply: Observable<SimBalance[]>;
+	    //debugger;
+	    let reply: Observable<SimBalance[]>;
 
-		if ( this.balances )
-		{
-			reply = of( this.balances );
-		}
-		else
-		{
-			reply = this.http.get<SimBalance[]>( 'assets/data.json' ).pipe
-				(
-					tap( ( data: SimBalance[] ) => {
-						this.balances = data;
-					} ),
-					delay( 3000 ),
-					catchError( ( err: HttpErrorResponse ) => {
-						return of( [] );
-					} ),
-				);
-		}
-		return reply;
+	    if ( this.balances )
+	    {
+	        reply = of( this.balances );
+	    }
+	    else
+	    {
+	        reply = this.http.get<SimBalance[]>( 'assets/data.json' ).pipe
+	        (
+	            tap( ( data: SimBalance[] ) =>
+	            {
+	                this.balances = data;
+	            } ),
+	            delay( 3000 ),
+	            catchError( ( err: HttpErrorResponse ) =>
+	            {
+	                return of( [] );
+	            } ),
+	        );
+	    }
+	    return reply;
 	}
 
 }

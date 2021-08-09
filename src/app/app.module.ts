@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import { FirstPageComponent } from './route/first-page/first-page.component';
 import { SecondPageComponent } from './route/second-page/second-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
-@NgModule( {
-	declarations: [
-		AppComponent,
-		FirstPageComponent,
-		SecondPageComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		HttpClientModule
-	],
-	providers: [],
-	bootstrap: [ AppComponent ]
-} )
-export class AppModule { }
+ @NgModule( {
+     declarations : [
+         AppComponent,
+         FirstPageComponent,
+         SecondPageComponent
+     ],
+     imports : [
+         BrowserModule,
+         AppRoutingModule,
+         HttpClientModule,
+         FormsModule
+     ],
+     providers : [],
+     bootstrap : [ AppComponent ]
+ } )
+export class AppModule
+{ }
