@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build_dev": "ng build",
-    "build_prod": "ng build --prod --base-href /PROJECT-TEMPLATE/",
+    "build_prod": "ng build --prod --base-href https://erandahan1977.github.io/PROJECT-TEMPLATE",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
