@@ -15,6 +15,7 @@ export class FirstPageComponent implements OnInit
 
 	constructor ( private balanceService: DataService )
 	{
+	    this.userName = 'test';
 	}
 
 	ngOnInit ()
