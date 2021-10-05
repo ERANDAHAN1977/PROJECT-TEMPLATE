@@ -1,6 +1,7 @@
 <div *ngIf="isWaitForData"> WAIT FOR DATA ...</div>
 
 <input [(ngModel)]="userName">
+{{userName}}
 <div>
   <div style="border-style: groove;padding: 20px;">
     <li *ngFor="let balance of simBalances" style="list-style:none">

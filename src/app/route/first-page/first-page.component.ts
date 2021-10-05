@@ -9,7 +9,7 @@ import { SimBalanceReq, SimBalance } from 'src/app/model/balance';
 } )
 export class FirstPageComponent implements OnInit
 {
-  userName= 'ERAN';
+	userName = 'ERAN';
 	isWaitForData = true;
 	simBalances: SimBalance[] = [];
 
@@ -19,7 +19,6 @@ export class FirstPageComponent implements OnInit
 
 	ngOnInit ()
 	{
-
 	    const req: SimBalanceReq = new SimBalanceReq();
 	    req.id = this.userName;
 
@@ -29,6 +28,7 @@ export class FirstPageComponent implements OnInit
 	        this.isWaitForData = false;
 
 	    } );
+
 	}
 
 }
